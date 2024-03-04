@@ -20,6 +20,21 @@ pipeline {
                     } else {
                         echo "program.dat file not found for branch: ${branchName}"
                     }
+                    
+                    // Echo different messages based on the branch name
+                    switch (branchName) {
+                        case 'first':
+                            echo 'one'
+                            break
+                        case 'second':
+                            echo 'two'
+                            break
+                        case 'third':
+                            echo 'three'
+                            break
+                        default:
+                            echo 'Branch name not recognized'
+                    }
                 }
             }
         }
