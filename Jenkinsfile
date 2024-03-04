@@ -23,13 +23,13 @@ pipeline {
                     
                     // Echo different messages based on the branch name
                     switch (branchName) {
-                        case 'first':
+                        case 'first-branch':
                             echo 'one'
                             break
-                        case 'second':
+                        case 'second-branch':
                             echo 'two'
                             break
-                        case 'third':
+                        case 'third-branch':
                             echo 'three'
                             break
                         default:
