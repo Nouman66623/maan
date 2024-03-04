@@ -1,19 +1,19 @@
 pipeline {
          agent any
          stages {
-             stage('Build') {
+             stage('first') {
                  steps {
-                     sh 'make build'
+                     echo "this is first"
                  }
              }
-             stage('Test') {
+             stage('second') {
                  steps {
-                     sh 'make test'
+                     echo "this is second"
                  }
              }
-             stage('Deploy') {
+             stage('third') {
                  steps {
-                     sh 'make deploy'
+                     echo "this is third"
                  }
              }
          }
