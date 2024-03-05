@@ -1,20 +1,22 @@
 pipeline {
-         agent any
-         stages {
-             stage('Build') {
-                 steps {
-                     sh 'make build'
-                 }
-             }
-             stage('Test') {
-                 steps {
-                     sh 'make test'
-                 }
-             }
-             stage('Deploy') {
-                 steps {
-                     sh 'make deploy'
-                 }
-             }
-         }
-     }
+    agent any
+    
+    stages {
+        stage('Print Messages') {
+            steps {
+                script {
+                    echo 'Hello, this is third-branch'
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
